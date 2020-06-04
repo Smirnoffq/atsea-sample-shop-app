@@ -18,6 +18,31 @@ This example uses features in Docker 17.05 CE Edge. Install this version to run 
 
 # Building and Running the AtSea Shop
 
+## Running with Application with nsjail
+
+This version adds NSJail into Application's Docker container. In order to build and run this application you need to perform following steps:
+
+```
+git clone https://github.com/google/nsjail.git
+cd nsjail
+docker build -t nsjail .
+```
+
+then clone this repository
+
+```
+git clone https://github.com/Smirnoffq/atsea-sample-shop-app.git
+cd atsea-sample-shop-app
+docker-compose build
+```
+
+then run built application 
+
+```
+docker-compose up
+```
+
+
 ## Secrets
 
 This application uses Docker secrets to secure the application components. The reverse proxy requires creating a certificate that is stored as a secret and the payment also requires a password stored as a secret. To create a certificate and add as a secret:

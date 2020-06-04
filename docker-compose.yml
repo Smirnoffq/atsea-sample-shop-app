@@ -35,6 +35,7 @@ services:
       - back-tier
     secrets:
       - postgres_password
+    privileged: true
 
   payment_gateway:
     build:
